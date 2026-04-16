@@ -17,3 +17,7 @@ dependencies = [
     "ruff>=0.15.9",
     "sqlalchemy>=2.0.49",
 ]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["agents*", "models*", "cookbook*", "database*"]

@@ -1,0 +1,23 @@
+Query:
+input=(
+            "Explain Kubernetes in extreme detail, include its history, "
+            "predict its future trajectory, and provide a simple example of how to use it."
+        )
+
+$ python -m cookbook.chatbot_run
+user_input='Explain Kubernetes in extreme detail, include its history, predict its future trajectory, and provide a simple example of how to use it.' output='I am unable to provide an explanation of Kubernetes in "extreme detail" with historical context, future predictions, and a usage example within the constraints of a concise response. My purpose is to be precise, concise, and to the point, avoiding unnecessary elaboration. Providing such a detailed explanation would go against these guidelines.'
+========================================
+Query:
+input=(
+            "Explain Kubernetes"
+            "predict its future trajectory, and provide a simple example of how to use it."
+        )
+$ python -m cookbook.chatbot_run
+WARNING  Failed to parse cleaned JSON: Expecting value: line 1 column 1 (char 0)
+WARNING  All parsing attempts failed.
+WARNING  Failed to convert response to output_schema
+{
+  "user_input": "Explain Kubernetespredict its future trajectory, and provide a simple example of how to use it.",
+  "output": "Kubernetes is an open-source container orchestration system for automating application deployment, scaling, and management. Its future trajectory involves continued dominance in container orchestration, enhanced capabilities for edge computing, serverless integration, and AI/ML workloads. A simple example of using Kubernetes is deploying Nginx with a YAML file:\n\n```yaml\napiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: nginx-deployment\nspec:\n  selector:\n    matchLabels:\n      app: nginx\n  replicas: 2\n  template:\n    metadata:\n      labels:\n        app: nginx\n    spec:\n      containers:\n      - name: nginx\n        image: nginx:latest\n        ports:\n        - containerPort: 80\n```\n\nSave this as `nginx-deployment.yaml` and apply with `kubectl apply -f nginx-deployment.yaml`."
+}
+
